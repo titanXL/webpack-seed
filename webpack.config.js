@@ -34,6 +34,12 @@ module.exports = {
 				})
 			},
 			{
+				test: /\.less$/,
+				use: extractPlugin.extract({
+					use: ['css-loader', 'less-loader']
+				})
+			},
+			{
 				test: /\.html$/,
 				use: ['html-loader?interpolate']
 			},
