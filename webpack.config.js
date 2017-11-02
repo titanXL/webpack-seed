@@ -48,7 +48,7 @@ module.exports = {
 			},
 			{
 				test: /\.html$/,
-				use: ['html-loader?interpolate']
+				use: ['html-loader?interpolate&minimize=false']
 			},
 			{
 				test: /\.(jpg|png|svg)$/,
