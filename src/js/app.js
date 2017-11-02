@@ -1,7 +1,11 @@
+import 'jquery'
+import 'bootstrap';
+
 import '../css/style.css';
 import '../css/main.less';
-import './test.js';
-import './vendor/vendor.js';
+import './test'
+import './vendor/script';
+
 import { RandomGenerator } from './random-generator';
 
 const outputParagraph = document.querySelector('#outputParagraph');

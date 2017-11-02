@@ -1,5 +1,4 @@
 //jquery
-import './jquery/jquery.js';
 
 //bootstrap
 // import './bootstrap/bootstrap.js';

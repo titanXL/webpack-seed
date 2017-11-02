@@ -15,12 +15,6 @@ module.exports = {
 		filename: 'bundle.js'
 		// publicPath: '/dist'
 	},
-	resolve: {
-        alias: {
-			$: "./src/js/vendors/jquery/jquery.js",
-            jquery: "./src/js/vendors/jquery/jquery.js"
-        }
-    },
 	module: {
 		rules: [
 			{
@@ -83,6 +77,10 @@ module.exports = {
 					outputPath: 'fonts/'
                 },
             },
+            {
+                test: /\.exec\.js$/,
+                use: [ { loader: 'script-loader' } ]
+            }
 
 		]
 	},
@@ -91,6 +89,11 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: 'src/index.html'
 		}),
-		new CleanWebpackPlugin(['dist'])
+		new CleanWebpackPlugin(['dist']),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery'
+		})
+
 	]
 };
