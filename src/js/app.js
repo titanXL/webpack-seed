@@ -1,3 +1,4 @@
+import '../css/style.css';
 import '../css/main.less';
 import { RandomGenerator } from './random-generator';
 

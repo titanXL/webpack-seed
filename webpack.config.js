@@ -36,20 +36,9 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: extractPlugin.extract({
-					use: [
-                        'style-loader',
-                        'css-loader',
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                plugins: () => ([
-                                    require('autoprefixer'),
-                                    require('precss'),
-                                ]),
-                            },
-                        },
-                    ],
-				})
+                    use: [ 'css-loader'],
+					fallback: 'style-loader'
+                })
             },
 			{
 				test: /\.less$/,

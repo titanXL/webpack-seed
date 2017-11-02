@@ -1,6 +1,6 @@
 # webpack-seed
 
-To include new css/scss/less files go to scr/css/main.scss|less and import it
+To include new css/scss/less files go to src/js/app.js and import it
 To include new js files go to src/js/app.js and import it
 
 Main HTML files is in src/index.html
