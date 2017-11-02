@@ -22,7 +22,7 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['es2015']
+							presets: ['env']
 						}
 					}
 				]
@@ -33,6 +33,24 @@ module.exports = {
 					use: ['css-loader', 'sass-loader']
 				})
 			},
+            {
+                test: /\.css$/,
+                use: extractPlugin.extract({
+					use: [
+                        'style-loader',
+                        'css-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: () => ([
+                                    require('autoprefixer'),
+                                    require('precss'),
+                                ]),
+                            },
+                        },
+                    ],
+				})
+            },
 			{
 				test: /\.less$/,
 				use: extractPlugin.extract({
@@ -44,7 +62,7 @@ module.exports = {
 				use: ['html-loader?interpolate']
 			},
 			{
-				test: /\.(jpg|png)$/,
+				test: /\.(jpg|png|svg)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -55,7 +73,21 @@ module.exports = {
 						}
 					}
 				]
-			}
+			},
+            {
+                // Match woff2 in addition to patterns like .woff?v=1.1.1.
+                test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                options: {
+                    // Limit at 50k. Above that it emits separate files
+                    limit: 50000,
+                    // Output below fonts directory
+                    name: '[name].[ext]',
+					publicPath: 'fonts/',
+					outputPath: 'fonts/'
+                },
+            },
+
 		]
 	},
 	plugins: [
