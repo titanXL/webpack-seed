@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var extractPlugin = new ExtractTextPlugin({
-	filename: 'main.css'
+	filename: './css/main.css'
 });
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['env']
+							presets: ['env'],
 						}
 					}
 				]
