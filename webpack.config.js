@@ -76,7 +76,12 @@ module.exports = {
 					publicPath: 'fonts/',
 					outputPath: 'fonts/'
                 },
+            },
+            {
+                test: /\.exec\.js$/,
+                use: [ { loader: 'script-loader' } ]
             }
+
 		]
 	},
 	plugins: [
