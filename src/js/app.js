@@ -1,5 +1,7 @@
 import '../css/style.css';
 import '../css/main.less';
+import './test.js';
+import './vendor/vendor.js';
 import { RandomGenerator } from './random-generator';
 
 const outputParagraph = document.querySelector('#outputParagraph');
