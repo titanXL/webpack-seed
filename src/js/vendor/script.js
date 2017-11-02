@@ -1,3 +1,4 @@
+var Snap = require('./snapper/snapper');
 // On ajax update functions
 
     // Handles JSONML format, see: http://www.jsonml.org/
@@ -55,7 +56,7 @@
         touchToDrag : false,
         easing: 'ease'
     });
-
+    console.log(snapper)
     // Sanpper On Resize
     var snap = document.getElementById('leftColumn');
 

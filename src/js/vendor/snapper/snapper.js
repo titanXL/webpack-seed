@@ -557,9 +557,7 @@
     if ((typeof module !== 'undefined') && module.exports) {
         module.exports = Snap;
     }
-    if (typeof ender === 'undefined') {
-        this.Snap = Snap;
-    }
+
     if ((typeof define === "function") && define.amd) {
         define("snap", [], function() {
             return Snap;
